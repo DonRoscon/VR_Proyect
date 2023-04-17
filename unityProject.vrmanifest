@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.joustinggame.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Developer\\Git\\Universidad\\Videojuegos y Realidad Virtual\\Jousting Game\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Jousting Game [Testing]"
+        }
+      }
+    }
+  ]
+}
