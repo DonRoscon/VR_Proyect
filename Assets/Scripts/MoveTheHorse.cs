@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MoveTheHorse : MonoBehaviour
 {
+    public Rigidbody  m_Rigidbody = new Rigidbody();
     // Start is called before the first frame updates
     void Start()
     {
-        //m_Rigidbody = GetComponent<Rigidbody>();
+        m_Rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -17,18 +18,13 @@ public class MoveTheHorse : MonoBehaviour
     void Update ()
     {
         if(Input.GetKey(KeyCode.UpArrow))
-            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
-        
+            m_Rigidbody.MovePosition((Vector3)transform.position + Vector3.forward*Time.deltaTime * moveSpeed);
         if(Input.GetKey(KeyCode.DownArrow))
-            transform.Translate(-Vector3.up * moveSpeed * Time.deltaTime);
-        
+            m_Rigidbody.MovePosition((Vector3)transform.position + Vector3.back*Time.deltaTime * moveSpeed);
         if(Input.GetKey(KeyCode.LeftArrow))
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        
+            m_Rigidbody.MovePosition((Vector3)transform.position + Vector3.left*Time.deltaTime * moveSpeed);
         if(Input.GetKey(KeyCode.RightArrow))
-            transform.Translate(Vector3.left * -moveSpeed * Time.deltaTime);
-        //Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        //m_Rigidbody.MovePosition(transform.position + m_Input * Time.deltaTime * m_Speed);
+            m_Rigidbody.MovePosition((Vector3)transform.position + Vector3.right*Time.deltaTime * moveSpeed);
     }
 }
 
